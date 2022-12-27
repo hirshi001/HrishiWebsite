@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Baloo 2', cursive;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(45deg, black 30%, #301934 100%);
+    overflow: auto;
+}
+
+#topnav {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    background-image: linear-gradient(45deg, black 30%, #301934 100%);
+    background-attachment: fixed;
+
+    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 01) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+#topnav #animate {
+    top: 0;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-color: #04AA6D;
+    visibility: hidden;
+    z-index: 2;
+}
+
+#topnav .active {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+#topnav a {
+    padding: 40px 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2em;
+    display: inline-block;
+
+    z-index: 3;
+}
+
+#topnav a:link {
+    text-decoration: none;
+}
+
+#topnav a:visited {
+    text-decoration: none;
+}
+
+#topnav a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#content {
+    width: 100%;
+    color: white;;
+    background-image: linear-gradient(
+            /*
+            transparent 12%,
+            currentColor 30%,
+             */
+            currentColor 0%,
+            currentColor 70%,
+            transparent 88%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-attachment: fixed;
+}
+
+#title {
+    color: white;
+    font-size: 50pt;
+    text-align: center;
+    padding-top: 50vh;
+    padding-bottom: 50vh;
+}
+
+#about-me {
+    /*Set padding top to the height of the topnav*/
+
+    margin: auto;
+    color: transparent;
+    font-size: 20pt;
+    width: 80%;
+}
+
+
+#portfolio {
+    /*Set padding top to the height of the topnav*/
+
+    margin: auto;
+    color: transparent;
+    font-size: 20pt;
+    width: 80%;
+}
+
+#services {
+    /*Set padding top to the height of the topnav*/
+
+    margin: auto;
+    color: transparent;
+    font-size: 20pt;
+    width: 80%;
+}
+
