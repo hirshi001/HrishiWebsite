@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
 </head>
-<body onresize="onResize()"  onscroll="onScroll()">
+<body onresize="onResize()" onscroll="onScroll()">
 <div id="topnav">
     <div id="topnav-background">
         <div id="animate"></div>
     </div>
-    <a id="home-nav" class="active navbutton" onclick="goHome()">Home</a>
+    <a id="home-nav" class="active navbutton" onclick="goHome('Home')">Home</a>
     <a id="about-me-nav" class="navbutton" onclick="goAboutMe()">About Me</a>
     <a id="portfolio-nav" class="navbutton" onclick="goPortfolio()">Portfolio</a>
     <a id="services-nav" class="navbutton" onclick="goServices()">Services</a>
@@ -23,7 +23,30 @@
     <div class="mpad-top" id="about-me">
         <div id="img1-separator">
             <img src="MyPicture.jpg" id="img1" alt="Trulli" width="500">
-            <p>Hi! My name is Hrishikesh Ingle. I am an Undergraduate Student studying Computer Science 💻.</p>
+            <div id="about-me-content">
+                <p>Hi! My name is Hrishikesh Ingle. I am an Undergraduate Student studying Computer Science 💻 at UW
+                    Madison 🦡.
+                    <br> <br>
+                    Things I enjoy: <br>
+                </p>
+                <div id="enjoy-content">
+                    <table rules=none>
+                        <tr>
+                            <td id="playVideoGames" class="selected enjoyinfo" onclick="setEnjoyContent('playVideoGames')">🎮 Playing Video Games</td>
+                            <td id="enjoy-content-information" rowspan="4">Loading <br>Info</td>
+                        </tr>
+                        <tr>
+                            <td id="running" class="enjoyinfo" onclick="setEnjoyContent('running')">🏃‍♂️ Running</td>
+                        </tr>
+                        <tr>
+                            <td id="chess" class="enjoyinfo" onclick="setEnjoyContent('chess')"> ♕ Chess</td>
+                        </tr>
+                        <tr>
+                            <td id="programming" class="enjoyinfo" onclick="setEnjoyContent('programming')">👨‍💻 Programming</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -150,5 +173,6 @@
     <div class="clearfix"></div>
 </div>
 <script src="index.js" onload="onLoad()"></script>
+<script src="enjoyselector.js" onload="enjoySelectorOnLoad()"></script>
 </body>
 </html>

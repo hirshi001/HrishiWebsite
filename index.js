@@ -10,7 +10,6 @@ function onLoad() {
     // load
     if(window.addEventListener) {
         window.addEventListener("wheel", event => {
-            const delta = Math.sign(event.deltaY);
             mouseEvent(event);
         });
         window.addEventListener("touchmove", event=>{
@@ -308,13 +307,11 @@ function onScroll() {
         bodyToActivate = body;
     }
     if (bodyToActivate != null) {
-        console.log(bodyToActivate.id);
         simpleSetActive(document.getElementById(bodyToActivate.id + "-nav"), bodyToActivate);
     }
 }
 
 function mouseEvent(e) {
-    console.log(e);
     userScroll = true;
 }
 

@@ -11,6 +11,8 @@ body {
     font-family: 'comic sans 2', sans-serif;
     width: 100vw;
     background-image: linear-gradient(45deg, black 30%, #301934 100%);
+    background-attachment: fixed;
+
     overflow: auto;
 }
 
@@ -22,10 +24,10 @@ body {
     justify-content: center;
 
     flex-wrap: wrap;
-    background-image: linear-gradient(45deg, black 30%, #301934 100%);
     background-attachment: fixed;
-    z-index: 1;
+    z-index: 2;
 
+    background-image: linear-gradient(45deg, black 30%, #301934 100%);
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(80%, rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
@@ -37,7 +39,7 @@ body {
     height: 100px;
     background-color: #04AA6D;
     visibility: hidden;
-    z-index: 2;
+    z-index: 3;
     -webkit-mask-composite: xor;
     -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(95%, rgba(0,0,0,0)), to(rgba(0,0,0,1))), -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(5%, rgba(0,0,0,1)), to(rgba(0,0,0,1)));
 }
@@ -57,7 +59,7 @@ body {
     font-size: 2em;
     display: inline-block;
 
-    z-index: 3;
+    z-index: 4;
 }
 
 #topnav a:link {
@@ -116,8 +118,8 @@ body {
     float: left;
 }
 
-#about-me p {
-    text-align: center;
+#about-me-content {
+    text-align: left;
     float: right;
     width: 45%;
     font-size: 1.5em;
@@ -125,6 +127,34 @@ body {
     overflow-wrap: break-word;
 }
 
+#about-me-content table {
+    width: 100%;
+    min-width: 500pt;
+}
+
+#about-me-content td {
+    width: 50%;
+    text-align: center;
+    border-width: 2pt;
+    padding: 10pt;
+}
+
+#about-me-content #enjoy-content{
+    margin-top: 10pt;
+}
+
+#about-me-content #enjoy-content .enjoyinfo {
+    text-align: left;
+    border-color: black;
+    border-width: 2pt;
+    border-style: solid;
+    margin: 0;
+    padding: 20pt;
+}
+
+#about-me-content #enjoy-content .enjoyinfo:hover {
+    cursor: pointer;
+}
 
 #portfolio {
     /*Set padding top to the height of the topnav*/
