@@ -13,6 +13,9 @@ function onLoad() {
             const delta = Math.sign(event.deltaY);
             mouseEvent(event);
         });
+        window.addEventListener("touchmove", event=>{
+            mouseEvent(event);
+        }, false);
     }
     onResize();
     setActiveElement();
@@ -248,8 +251,8 @@ function setActive(element, body) {
             active.style.backgroundAttachment = "initial";
             active.style.fontSize = selectedSize.toString() + "em";
             clearInterval(intervalID);
+            window.scrollTo(window.scrollX, bodyToActivate.offsetTop);
             intervalID = setInterval(fadeIn, 5);
-            document.body.scrollTop = bodyToActivate.offsetTop;
         }
     }
 
