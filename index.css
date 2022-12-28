@@ -5,13 +5,11 @@
 }
 
 html {
-    overflow: hidden;
 }
 
 body {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'comic sans 2', sans-serif;
     width: 100vw;
-    height: 100vh;
     background-image: linear-gradient(45deg, black 30%, #301934 100%);
     overflow: auto;
 }
@@ -26,8 +24,9 @@ body {
     flex-wrap: wrap;
     background-image: linear-gradient(45deg, black 30%, #301934 100%);
     background-attachment: fixed;
+    z-index: 1;
 
-    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 01) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(80%, rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
 
@@ -39,11 +38,16 @@ body {
     background-color: #04AA6D;
     visibility: hidden;
     z-index: 2;
+    -webkit-mask-composite: xor;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(95%, rgba(0,0,0,0)), to(rgba(0,0,0,1))), -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(5%, rgba(0,0,0,1)), to(rgba(0,0,0,1)));
 }
 
 #topnav .active {
     text-decoration: none;
-    font-weight: bolder;
+    font-size: 2.25em;
+    -webkit-mask-composite: xor;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(95%, rgba(0,0,0,0)), to(rgba(0,0,0,1))), -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(5%, rgba(0,0,0,1)), to(rgba(0,0,0,1)));
+
 }
 
 #topnav a {
@@ -86,7 +90,11 @@ body {
     background-attachment: fixed;
 }
 
-#title {
+.clearfix {
+    clear: both;
+}
+
+#home {
     color: white;
     font-size: 50pt;
     text-align: center;
@@ -98,9 +106,23 @@ body {
     /*Set padding top to the height of the topnav*/
 
     margin: auto;
-    color: transparent;
+    color: white;
     font-size: 20pt;
     width: 80%;
+}
+
+#about-me img{
+    width: 45%;
+    float: left;
+}
+
+#about-me p {
+    text-align: center;
+    float: right;
+    width: 45%;
+    font-size: 1.5em;
+    /* make text wrap overflow */
+    overflow-wrap: break-word;
 }
 
 
@@ -108,16 +130,17 @@ body {
     /*Set padding top to the height of the topnav*/
 
     margin: auto;
-    color: transparent;
+    color: white;
     font-size: 20pt;
     width: 80%;
+    float: none;
 }
 
 #services {
     /*Set padding top to the height of the topnav*/
 
     margin: auto;
-    color: transparent;
+    color: white;
     font-size: 20pt;
     width: 80%;
 }

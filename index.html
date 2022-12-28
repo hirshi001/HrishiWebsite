@@ -3,83 +3,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>animated background with pure css and html</title>
+    <title>Hrishi's Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
 </head>
-<body onresize="onResize()" onscroll="onScroll()">
+<body onresize="onResize()"  onscroll="onScroll()">
 <div id="topnav">
     <div id="topnav-background">
         <div id="animate"></div>
     </div>
-    <a id="home-nav" class="active" href="#title" onclick="goHome()">Home</a>
-    <a id="about-me-nav" href="#about-me" onclick="goAboutMe()">About Me</a>
-    <a id="portfolio-nav" href="#portfolio" onclick="goPortfolio()">Portfolio</a>
-    <a id="services-nav" href="#services" onclick="goServices()">Services</a>
+    <a id="home-nav" class="active navbutton" onclick="goHome()">Home</a>
+    <a id="about-me-nav" class="navbutton" onclick="goAboutMe()">About Me</a>
+    <a id="portfolio-nav" class="navbutton" onclick="goPortfolio()">Portfolio</a>
+    <a id="services-nav" class="navbutton" onclick="goServices()">Services</a>
     <a>Contact</a>
 </div>
 <div id="content">
-    <h2 id="title">Welcome to our Website</h2>
+    <h2 id="home">Welcome</h2>
     <div class="mpad-top" id="about-me">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
-            nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
-            sed unde.</p>
+        <div id="img1-separator">
+            <img src="MyPicture.jpg" id="img1" alt="Trulli" width="500">
+            <p>Hi! My name is Hrishikesh Ingle. I am an Undergraduate Student studying Computer Science 💻.</p>
+        </div>
+        <div class="clearfix"></div>
     </div>
-
+    <div class="clearfix"></div>
     <div class="mpad-top" id="portfolio">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
             nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
@@ -139,7 +87,7 @@
             nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
             sed unde.</p>
     </div>
-
+    <div class="clearfix"></div>
     <div class="mpad-top" id="services">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores eligendi error illum maiores
             nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
@@ -199,6 +147,7 @@
             nostrum obcaecati quisquam quos vitae voluptatum? Assumenda beatae excepturi id obcaecati, odio odit quasi
             sed unde.</p>
     </div>
+    <div class="clearfix"></div>
 </div>
 <script src="index.js" onload="onLoad()"></script>
 </body>
