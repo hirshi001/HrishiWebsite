@@ -7,12 +7,16 @@
 }
 
 body {
-    background-color: #440044;;
+    background-color: black;
 }
 
 img{
     width: 4rem;
     image-rendering: pixelated;
+}
+
+#content {
+    background-color: #440044;
 }
 
 li, a, button {
