@@ -39,6 +39,28 @@ const toggleSidebar = () => {
     sidebar.classList.toggle("close");
 };
 
+const dragToggle = (e) => {
+    // check if the sidebar is locked
+    console.log("drag")
+    if (!sidebar.classList.contains("locked")) {
+    //    return;
+    }
+
+    // check if sidebar is closed
+    if (sidebar.classList.contains("close")) {
+        // if drag is to the right, toggle
+        if (e.clientX > sidebar.offsetWidth) {
+            toggleSidebar();
+        }
+    }
+    else{
+        // if drag is to the left, toggle
+        if (e.clientX < sidebar.offsetWidth) {
+            toggleSidebar();
+        }
+    }
+};
+
 
 function onLoad(){
     document.getElementById("sidebar-div").innerHTML =
@@ -154,6 +176,10 @@ function onLoad(){
         sidebar.classList.remove("hoverable");
     }
 
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        addEventListener("mousemove", dragToggle);
+    }
     // Adding event listeners to buttons and sidebar for the corresponding actions
     sidebarLockBtn.addEventListener("click", toggleLock);
     sidebar.addEventListener("mouseleave", hideSidebar);

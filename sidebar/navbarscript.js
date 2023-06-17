@@ -8,7 +8,7 @@ addEventListener("scroll", function() {
     }
     let currentScrollPos = window.pageYOffset;
     let navbar = document.getElementById("navbar");
-    if (prevScrollpos > currentScrollPos) {
+    if (prevScrollpos > currentScrollPos || currentScrollPos < navbar.offsetHeight) {
         navbar.style.top = "0";
     } else {
         navbar.style.top = "-"+navbar.offsetHeight + "px"
