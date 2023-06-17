@@ -32,9 +32,10 @@ li, a, button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 10%;
-    background-image:linear-gradient( black, black, #0000);
+    padding: 16pt 10% 50pt;
+    background-image:linear-gradient(black, #0000);
 }
+
 
 .logo {
     cursor: pointer;
