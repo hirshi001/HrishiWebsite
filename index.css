@@ -1,177 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
-}
-
-html {
 }
 
 body {
-    font-family: 'comic sans 2', sans-serif;
-    width: 100vw;
-    background-image: linear-gradient(45deg, black 30%, #301934 100%);
-    background-attachment: fixed;
-
-    overflow: auto;
+    background-color: #440044;;
 }
 
-#topnav {
-    top: 0;
-    position: fixed;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-
-    flex-wrap: wrap;
-    background-attachment: fixed;
-    z-index: 2;
-
-    background-image: linear-gradient(45deg, black 30%, #301934 100%);
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(80%, rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+img{
+    width: 4rem;
+    image-rendering: pixelated;
 }
 
-
-#topnav #animate {
-    top: 0;
-    position: fixed;
-    width: 100px;
-    height: 100px;
-    background-color: #04AA6D;
-    visibility: hidden;
-    z-index: 3;
-    -webkit-mask-composite: xor;
-    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(95%, rgba(0,0,0,0)), to(rgba(0,0,0,1))), -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(5%, rgba(0,0,0,1)), to(rgba(0,0,0,1)));
-}
-
-#topnav .active {
-    text-decoration: none;
-    font-size: 2.25em;
-    -webkit-mask-composite: xor;
-    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(95%, rgba(0,0,0,0)), to(rgba(0,0,0,1))), -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0)), color-stop(5%, rgba(0,0,0,1)), to(rgba(0,0,0,1)));
-
-}
-
-#topnav a {
-    padding: 40px 15px;
-    text-transform: uppercase;
+li, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16pt;
     color: #fff;
-    font-size: 2em;
+    text-decoration: none;
+}
+
+#navbar {
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.5s; /* Transition effect when sliding down (and up) */
+    position: fixed;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background-image:linear-gradient( black, black, #0000);
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
     display: inline-block;
-
-    z-index: 4;
+    padding: 0 20px;
 }
 
-#topnav a:link {
-    text-decoration: none;
+.nav_links li a {
+    transition: all 0.3s ease 0s;
 }
 
-#topnav a:visited {
-    text-decoration: none;
+.nav_links li a:hover {
+    color: #117711;
 }
 
-#topnav a:hover {
+button {
+    margin-left: 20pt;
+    padding: 10pt 30pt;
+    background-color: #117711;
+    border: none;
+    border-radius: 50pt;
     cursor: pointer;
-    text-decoration: none;
+    transition: all 0.3s ease 0s;
 }
 
-#content {
-    width: 100%;
-    color: white;;
-    background-image: linear-gradient(
-            /*
-            transparent 12%,
-            currentColor 30%,
-             */
-            currentColor 0%,
-            currentColor 70%,
-            transparent 88%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-attachment: fixed;
+button:hover {
+    background-color: #117711AA;
 }
 
-.clearfix {
-    clear: both;
+
+
+body div p {
+    font-size: larger;
 }
-
-#home {
-    color: white;
-    font-size: 50pt;
-    text-align: center;
-    padding-top: 50vh;
-    padding-bottom: 50vh;
-}
-
-#about-me {
-    /*Set padding top to the height of the topnav*/
-
-    margin: auto;
-    color: white;
-    font-size: 20pt;
-    width: 80%;
-}
-
-#about-me img{
-    width: 45%;
-    float: left;
-}
-
-#about-me-content {
-    text-align: left;
-    float: right;
-    width: 45%;
-    font-size: 1.5em;
-    /* make text wrap overflow */
-    overflow-wrap: break-word;
-}
-
-#about-me-content table {
-    width: 100%;
-    min-width: 500pt;
-}
-
-#about-me-content td {
-    width: 50%;
-    text-align: center;
-    border-width: 2pt;
-    padding: 10pt;
-}
-
-#about-me-content #enjoy-content{
-    margin-top: 10pt;
-}
-
-#about-me-content #enjoy-content .enjoyinfo {
-    text-align: left;
-    border-color: black;
-    border-width: 2pt;
-    border-style: solid;
-    margin: 0;
-    padding: 20pt;
-}
-
-#about-me-content #enjoy-content .enjoyinfo:hover {
-    cursor: pointer;
-}
-
-#portfolio {
-    /*Set padding top to the height of the topnav*/
-
-    margin: auto;
-    color: white;
-    font-size: 20pt;
-    width: 80%;
-    float: none;
-}
-
-#services {
-    /*Set padding top to the height of the topnav*/
-
-    margin: auto;
-    color: white;
-    font-size: 20pt;
-    width: 80%;
-}
-
