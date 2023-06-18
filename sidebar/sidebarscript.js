@@ -176,7 +176,7 @@ function onLoad() {
 
 
     // if (isMobile) {
-        addEventListener("mousemove", dragToggle);
+        addEventListener("touchmove", dragToggle);
     // }
     // Adding event listeners to buttons and sidebar for the corresponding actions
     sidebarLockBtn.addEventListener("click", toggleLock);
