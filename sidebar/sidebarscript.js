@@ -3,6 +3,7 @@ let sidebar = document.querySelector(".sidebar");
 let sidebarOpenBtn = document.querySelector("#sidebar-open");
 let sidebarCloseBtn = document.querySelector("#sidebar-close");
 let sidebarLockBtn = document.querySelector("#lock-icon");
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 
 
 // Function to toggle the lock state of the sidebar
@@ -41,7 +42,6 @@ const toggleSidebar = () => {
 
 const dragToggle = (e) => {
     // check if the sidebar is locked
-    console.log("drag")
     if (!sidebar.classList.contains("locked")) {
     //    return;
     }
@@ -52,8 +52,7 @@ const dragToggle = (e) => {
         if (e.clientX > sidebar.offsetWidth) {
             toggleSidebar();
         }
-    }
-    else{
+    } else {
         // if drag is to the left, toggle
         if (e.clientX < sidebar.offsetWidth) {
             toggleSidebar();
@@ -62,7 +61,7 @@ const dragToggle = (e) => {
 };
 
 
-function onLoad(){
+function onLoad() {
     document.getElementById("sidebar-div").innerHTML =
         "<nav class=\"sidebar locked\">\n" +
         "    <div class=\"logo_items flex\">\n" +
@@ -71,7 +70,6 @@ function onLoad(){
         "        </span>\n" +
         "        <span class=\"logo_name\">Womp Womp</span>\n" +
         "        <i class=\"bx bx-lock-alt\" id=\"lock-icon\" title=\"Unlock Sidebar\"></i>\n" +
-        "        <i class=\"bx bx-x\" id=\"sidebar-close\"></i>\n" +
         "    </div>\n" +
         "    <div class=\"menu_container\">\n" +
         "        <div class=\"menu_items\">\n" +
@@ -177,9 +175,9 @@ function onLoad(){
     }
 
 
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    // if (isMobile) {
         addEventListener("mousemove", dragToggle);
-    }
+    // }
     // Adding event listeners to buttons and sidebar for the corresponding actions
     sidebarLockBtn.addEventListener("click", toggleLock);
     sidebar.addEventListener("mouseleave", hideSidebar);

@@ -16,7 +16,8 @@ img{
 }
 
 #content {
-    background-color: #440044;
+    background-color: #112;
+    color: #aaa;
 }
 
 li, a, button {
@@ -37,7 +38,7 @@ li, a, button {
     justify-content: space-between;
     align-items: center;
     padding: 16pt 10% 50pt;
-    background-image:linear-gradient(black, #0000);
+    background-image:linear-gradient(black, black, #0000);
 }
 
 
