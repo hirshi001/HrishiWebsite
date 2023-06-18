@@ -40,121 +40,98 @@ const toggleSidebar = () => {
     sidebar.classList.toggle("close");
 };
 
-const dragToggle = (e) => {
-    // check if the sidebar is locked
-    if (!sidebar.classList.contains("locked")) {
-    //    return;
-    }
-
-    // check if sidebar is closed
-    if (sidebar.classList.contains("close")) {
-        // if drag is to the right, toggle
-        if (e.clientX > sidebar.offsetWidth) {
-            toggleSidebar();
-        }
-    } else {
-        // if drag is to the left, toggle
-        if (e.clientX < sidebar.offsetWidth) {
-            toggleSidebar();
-        }
-    }
-};
-
 
 function onLoad() {
     document.getElementById("sidebar-div").innerHTML =
-        "<nav class=\"sidebar locked\">\n" +
-        "    <div class=\"logo_items flex\">\n" +
-        "        <span class=\"nav_image\">\n" +
-        "          <img src=\"images/MinecraftSkinFace.png\" alt=\"logo_img\" />\n" +
+        "<nav class='sidebar locked'>\n" +
+        "    <div class='logo_items flex'>\n" +
+        "        <span class='nav_image'>\n" +
+        "          <img src='/images/MinecraftSkinFace.png' alt='logo_img' />\n" +
         "        </span>\n" +
-        "        <span class=\"logo_name\">Womp Womp</span>\n" +
-        "        <i class=\"bx bx-lock-alt\" id=\"lock-icon\" title=\"Unlock Sidebar\"></i>\n" +
+        "        <span class='logo_name'>Womp Womp</span>\n" +
+        "        <i class='bx bx-lock-alt' id='lock-icon' title='Unlock Sidebar'></i>\n" +
         "    </div>\n" +
-        "    <div class=\"menu_container\">\n" +
-        "        <div class=\"menu_items\">\n" +
-        "            <ul class=\"menu_item\">\n" +
-        "                <div class=\"menu_title flex\">\n" +
-        "                    <span class=\"title\">Home</span>\n" +
-        "                    <span class=\"line\"></span>\n" +
+        "    <div class='menu_container'>\n" +
+        "        <div class='menu_items'>\n" +
+        "            <ul class='menu_item'>\n" +
+        "                <div class='menu_title flex'>\n" +
+        "                    <span class='title'>Home</span>\n" +
+        "                    <span class='line'></span>\n" +
         "                </div>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"index.html\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-home-alt\"></i>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href='/index.html' class='link flex'>\n" +
+        "                        <i class='bx bx-home-alt'></i>\n" +
         "                        <span>Home Page</span>\n" +
         "                    </a>\n" +
         "                </li>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"#\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-grid-alt\"></i>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href='#' class='link flex'>\n" +
+        "                        <i class='bx bxs-contact'></i>\n" +
+        "                        <span>Contact Me</span>\n" +
+        "                    </a>\n" +
+        "                </li>\n" +
+        "            </ul>\n" +
+        "            <ul class='menu_item'>\n" +
+        "                <div class='menu_title flex'>\n" +
+        "                    <span class='title'>Projects</span>\n" +
+        "                    <span class='line'></span>\n" +
+        "                </div>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href='#' class='link flex'>\n" +
+        "                        <i class='bx bx-search-alt' ></i>\n" +
+        "                        <input type='text' placeholder='Search Project'/>\n" +
+        "                    </a>\n" +
+        "                </li>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href='#' class='link flex'>\n" +
+        "                        <i class='bx bx-grid-alt'></i>\n" +
         "                        <span>All Projects</span>\n" +
         "                    </a>\n" +
         "                </li>\n" +
         "            </ul>\n" +
-        "            <ul class=\"menu_item\">\n" +
-        "                <div class=\"menu_title flex\">\n" +
-        "                    <span class=\"title\">Projects</span>\n" +
-        "                    <span class=\"line\"></span>\n" +
+        "            <ul class='menu_item'>\n" +
+        "                <div class='menu_title flex'>\n" +
+        "                    <span class='title'>Setting</span>\n" +
+        "                    <span class='line'></span>\n" +
         "                </div>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"#\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bxs-magic-wand\"></i>\n" +
-        "                        <span>Magic Build</span>\n" +
-        "                    </a>\n" +
-        "                </li>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"#\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-folder\"></i>\n" +
-        "                        <span>New Projects</span>\n" +
-        "                    </a>\n" +
-        "                </li>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"#\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-cloud-upload\"></i>\n" +
-        "                        <span>Upload New</span>\n" +
-        "                    </a>\n" +
-        "                </li>\n" +
-        "            </ul>\n" +
-        "            <ul class=\"menu_item\">\n" +
-        "                <div class=\"menu_title flex\">\n" +
-        "                    <span class=\"title\">Setting</span>\n" +
-        "                    <span class=\"line\"></span>\n" +
-        "                </div>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"#\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-flag\"></i>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href=#' class='link flex'>\n" +
+        "                        <i class='bx bx-flag'></i>\n" +
         "                        <span>Notice Board</span>\n" +
         "                    </a>\n" +
         "                </li>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"#\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-award\"></i>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href='#' class='link flex'>\n" +
+        "                        <i class='bx bx-award'></i>\n" +
         "                        <span>Award</span>\n" +
         "                    </a>\n" +
         "                </li>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"#\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-cog\"></i>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href='#' class='link flex'>\n" +
+        "                        <i class='bx bx-cog'></i>\n" +
         "                        <span>Setting</span>\n" +
         "                    </a>\n" +
         "                </li>\n" +
         "                </li>\n" +
-        "                <li class=\"item\">\n" +
-        "                    <a href=\"pages/login.html\" class=\"link flex\">\n" +
-        "                        <i class=\"bx bx-log-in-circle\"></i>\n" +
+        "                <li class='item'>\n" +
+        "                    <a href='/login' class='link flex'>\n" +
+        "                        <i class='bx bx-log-in-circle'></i>\n" +
         "                        <span>Log In</span>\n" +
         "                    </a>\n" +
         "                </li>\n" +
         "            </ul>\n" +
         "        </div>\n" +
-        "        <div class=\"sidebar_profile\">\n" +
-        "          <span class=\"nav_image\">\n" +
-        "            <img src=\"images/profile.jpg\" alt=\"logo_img\" />\n" +
+        "        <div class='sidebar_profile'>\n" +
+        "          <span class='nav_image'>\n" +
+        "            <img src='/images/profile.jpg' alt='logo_img' />\n" +
         "          </span>\n" +
-        "            <div class=\"data_text\">\n" +
-        "                <span class=\"name\">Hrishikesh Ingle</span>\n" +
-        "                <a href = \"mailto: hrishikeshningle@gmail.com\">" +
-        "                   <span class=\"email\">hrishikeshningle@gmail.com</span>\n" +
+        "            <div class='data_text'>\n" +
+        "                <span class='name'>Hrishikesh Ingle</span>\n" +
+        "                <a href = 'tel: 4085297091'>" +
+        "                   <span class='email'>+1 (408) 529-7091</span>\n" +
+        "                </a>\n" +
+        "                <a href = 'mailto: hrishikeshningle@gmail.com'>" +
+        "                   <span class='email'>hrishikeshningle@gmail.com</span>\n" +
         "                </a>\n" +
         "            </div>\n" +
         "        </div>\n" +
@@ -174,10 +151,6 @@ function onLoad() {
         sidebar.classList.remove("hoverable");
     }
 
-
-    // if (isMobile) {
-        addEventListener("touchmove", dragToggle);
-    // }
     // Adding event listeners to buttons and sidebar for the corresponding actions
     sidebarLockBtn.addEventListener("click", toggleLock);
     sidebar.addEventListener("mouseleave", hideSidebar);
