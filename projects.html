@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hrishi's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="projects/projects.css" rel="stylesheet">
+    <link href="styles/sidebarstyles.css" rel="stylesheet">
+    <link href="styles/navbar.css" rel="stylesheet">
+
+    <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+    <script src="styles/navbarscript.js" defer></script>
+    <script src="styles/sidebarscript.js" defer onload="onLoad()"></script>
+    <script src="projects/loadProjects.js" defer></script>
+</head>
+<body>
+
+<svg id="fader"></svg>
+<script>
+    if (window.AnimationEvent) {
+        const fader = document.getElementById('fader');
+        fader.classList.add('fade-out');
+    }
+</script>
+
+<header id="navbar">
+    <div></div>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="#home" onclick="onNavBarButtonClick()">Home</a></li>
+            <li><a href="#news" onclick="onNavBarButtonClick()">News</a></li>
+            <li><a href="#" onclick="onNavBarButtonClick()">Contact</a></li>
+            <li><a href="#" onclick="onNavBarButtonClick()">About</a></li>
+        </ul>
+    </nav>
+    <a class="cta" href="#">
+        <button>Contact</button>
+    </a>
+</header>
+
+<!-- Must include this and the sidebarscript.js for the styles to appear. Include in every file -->
+<div id="sidebar-div"></div>
+
+<div id="content">
+
+    <div class="current-project">
+        <div class="click-to-start">
+            <button onclick="clickToStart()">Click To Start</button>
+        </div>
+    </div>
+
+    <div class="project-links middle">
+        <div class="project">
+            <div>
+                <button onclick="displayGame('https://itch.io/embed-upload/7586480?color=333333')">
+                    <img src="https://img.itch.zone/aW1nLzEyNTA0MDcyLnBuZw==/180x143%23c/vo4U2U.png" alt=""/>
+                </button>
+            </div>
+            <div>
+                <a class="project-title" href="https://hirshi001.itch.io/pixelwars" target="_blank"
+                   rel="noopener noreferrer">Pixel Wars</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <div>
+                <button onclick="displayGame('https://itch.io/embed-upload/7469085?color=333333')">
+                    <img src="https://img.itch.zone/aW1nLzEyNTEzOTAzLnBuZw==/315x250%23c/%2Fy5KXR.png" alt=""/>
+                </button>
+            </div>
+            <div>
+                <a class="project-title" href="https://hirshi001.itch.io/pixelwars" target="_blank"
+                   rel="noopener noreferrer">Chess</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <div>
+                <button onclick="displayGame('https://itch.io/embed-upload/7174908?color=333333')">
+                    <img src="https://img.itch.zone/aW1nLzEyNTE3MTczLnBuZw==/315x250%23c/SZuPrM.png" alt=""/>
+                </button>
+            </div>
+            <div>
+                <a class="project-title" href="https://hirshi001.itch.io/universalempire" target="_blank"
+                   rel="noopener noreferrer">Universal Empire</a>
+            </div>
+        </div>
+
+
+        <div class="project">
+            <div>
+                <button onclick="displayGame('https://itch.io/embed-upload/4065937?color=333333')">
+                    <img src="https://img.itch.zone/aW1nLzEyNTE3MjMwLnBuZw==/315x250%23c/2qqLZt.png" alt=""/>
+                </button>
+            </div>
+            <div>
+                <a class="project-title" href="https://hirshi001.itch.io/balldodge" target="_blank"
+                   rel="noopener noreferrer">Ball Dodge</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

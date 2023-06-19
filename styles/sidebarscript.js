@@ -14,10 +14,12 @@ const toggleLock = () => {
         sidebar.classList.add("hoverable");
         sidebarLockBtn.classList.replace("bx-lock-alt", "bx-lock-open-alt");
         sidebarLockBtn.title = "Lock Sidebar";
+        document.cookie = "sidebarLock=False"
     } else {
         sidebar.classList.remove("hoverable");
         sidebarLockBtn.classList.replace("bx-lock-open-alt", "bx-lock-alt");
         document.getElementById("lock-icon").title = "Unlock Sidebar";
+        document.cookie = "sidebarLock=True"
     }
 };
 
@@ -59,7 +61,7 @@ function onLoad() {
         "                    <span class='line'></span>\n" +
         "                </div>\n" +
         "                <li class='item'>\n" +
-        "                    <a href='/index.html' class='link flex'>\n" +
+        "                    <a href='index.html' class='link flex'>\n" +
         "                        <i class='bx bx-home-alt'></i>\n" +
         "                        <span>Home Page</span>\n" +
         "                    </a>\n" +
@@ -79,11 +81,13 @@ function onLoad() {
         "                <li class='item'>\n" +
         "                    <a href='#' class='link flex'>\n" +
         "                        <i class='bx bx-search-alt' ></i>\n" +
-        "                        <input type='text' placeholder='Search Project'/>\n" +
+        "                        <div>\n" +
+        "                           <input type='text' placeholder='Search Project'/>\n" +
+        "                        </div>\n" +
         "                    </a>\n" +
         "                </li>\n" +
         "                <li class='item'>\n" +
-        "                    <a href='#' class='link flex'>\n" +
+        "                    <a href='projects.html' class='link flex'>\n" +
         "                        <i class='bx bx-grid-alt'></i>\n" +
         "                        <span>All Projects</span>\n" +
         "                    </a>\n" +
@@ -114,7 +118,7 @@ function onLoad() {
         "                </li>\n" +
         "                </li>\n" +
         "                <li class='item'>\n" +
-        "                    <a href='/login' class='link flex'>\n" +
+        "                    <a href='login.html' class='link flex'>\n" +
         "                        <i class='bx bx-log-in-circle'></i>\n" +
         "                        <span>Log In</span>\n" +
         "                    </a>\n" +
@@ -155,7 +159,54 @@ function onLoad() {
     sidebarLockBtn.addEventListener("click", toggleLock);
     sidebar.addEventListener("mouseleave", hideSidebar);
     sidebar.addEventListener("mouseenter", showSidebar);
-    sidebarOpenBtn.addEventListener("click", toggleSidebar);
-    sidebarCloseBtn.addEventListener("click", toggleSidebar);
+    // sidebarOpenBtn.addEventListener("click", toggleSidebar);
+    // sidebarCloseBtn.addEventListener("click", toggleSidebar);
+
+
+    // fade out animation
+    let anchors = document.getElementsByTagName("a");
+    for (let i = 0; i < anchors.length; i++) {
+        if (anchors[i].hostname !== window.location.hostname || anchors[i].pathname === window.location.pathname) {
+            continue;
+        }
+        anchors[i].addEventListener('click', function (event) {
+            var fader = document.getElementById('fader'),
+                anchor = event.currentTarget;
+
+            var listener = function () {
+                window.location = anchor.href;
+                fader.removeEventListener('animationend', listener);
+            };
+            fader.addEventListener('animationend', listener);
+
+            event.preventDefault();
+            fader.classList.add('fade-in');
+        });
+    }
+
+    window.addEventListener('pageshow', function (event) {
+        if (!event.persisted) {
+            return;
+        }
+        let fader = document.getElementById('fader');
+        fader.classList.remove('fade-in');
+    });
+
+    // lock toggle check
+    const cookieToggle = document.cookie.split("; ")
+        .find((row) => row.startsWith("sidebarLock"))?.split("=")[1]
+
+    if (cookieToggle === "True" && sidebar.classList.contains("Locked")) {
+        toggleLock()
+    } else if (cookieToggle === "False" && !sidebar.classList.contains("Locked")) {
+        toggleLock()
+    }
+    if (cookieToggle === "False") {
+        hideSidebar()
+    } else {
+        showSidebar()
+    }
+
+    console.log(document.cookie)
 
 }

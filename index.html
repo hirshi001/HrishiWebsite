@@ -6,15 +6,24 @@
     <title>Hrishi's Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
+    <link href="styles/sidebarstyles.css" rel="stylesheet">
+    <link href="styles/navbar.css" rel="stylesheet">
 
     <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-    <link href="sidebar/sidebarstyles.css" rel="stylesheet">
-    <script src="sidebar/navbarscript.js" defer></script>
-    <script src="sidebar/sidebarscript.js" defer onload="onLoad()"></script>
+    <script src="styles/navbarscript.js" defer></script>
+    <script src="styles/sidebarscript.js" defer onload="onLoad()"></script>
 
 </head>
 <body>
+
+<svg id="fader"></svg>
+<script>
+    if (window.AnimationEvent) {
+        const fader = document.getElementById('fader');
+        fader.classList.add('fade-out');
+    }
+</script>
 
 <header id="navbar">
     <div></div>
@@ -31,8 +40,10 @@
     </a>
 </header>
 
-<!-- Must include this and the sidebarscript.js for the sidebar to appear. Include in every file -->
+<!-- Must include this and the sidebarscript.js for the styles to appear. Include in every file -->
 <div id="sidebar-div"></div>
+
+
 
 <div id="content">
     <div id="home">

@@ -58,6 +58,7 @@
 .sidebar.close .name,
 .sidebar.close .email,
 .sidebar.close .logo_name,
+.sidebar.close input,
 .sidebar.close #lock-icon,
 .sidebar.close #sidebar-close {
     opacity: 0;
@@ -119,6 +120,19 @@
 .item {
     list-style: none;
 }
+.item input {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: calc(100% - 10px);
+    font-size: 18px;
+    color: #FFF;
+    background-color: #333;
+}
+
 .link {
     text-decoration: none;
     border-radius: 8px;
