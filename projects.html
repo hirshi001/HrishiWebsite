@@ -13,7 +13,7 @@
 
     <script src="styles/navbarscript.js" defer></script>
     <script src="styles/sidebarscript.js" defer onload="onLoad()"></script>
-    <script src="projects/loadProjects.js" defer></script>
+    <script src="projects/loadProjects.js" defer onload="loadProjects()"></script>
 </head>
 <body>
 
@@ -47,59 +47,12 @@
 
     <div class="current-project">
         <div class="click-to-start">
+            <img id="thumbnail" src="https://i.ytimg.com/vi/2ZU2Qn0A5xY/maxresdefault.jpg" alt="Project Image">
             <button onclick="clickToStart()">Click To Start</button>
         </div>
     </div>
 
     <div class="project-links middle">
-        <div class="project">
-            <div>
-                <button onclick="displayGame('https://itch.io/embed-upload/7586480?color=333333')">
-                    <img src="https://img.itch.zone/aW1nLzEyNTA0MDcyLnBuZw==/180x143%23c/vo4U2U.png" alt=""/>
-                </button>
-            </div>
-            <div>
-                <a class="project-title" href="https://hirshi001.itch.io/pixelwars" target="_blank"
-                   rel="noopener noreferrer">Pixel Wars</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <div>
-                <button onclick="displayGame('https://itch.io/embed-upload/7469085?color=333333')">
-                    <img src="https://img.itch.zone/aW1nLzEyNTEzOTAzLnBuZw==/315x250%23c/%2Fy5KXR.png" alt=""/>
-                </button>
-            </div>
-            <div>
-                <a class="project-title" href="https://hirshi001.itch.io/pixelwars" target="_blank"
-                   rel="noopener noreferrer">Chess</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <div>
-                <button onclick="displayGame('https://itch.io/embed-upload/7174908?color=333333')">
-                    <img src="https://img.itch.zone/aW1nLzEyNTE3MTczLnBuZw==/315x250%23c/SZuPrM.png" alt=""/>
-                </button>
-            </div>
-            <div>
-                <a class="project-title" href="https://hirshi001.itch.io/universalempire" target="_blank"
-                   rel="noopener noreferrer">Universal Empire</a>
-            </div>
-        </div>
-
-
-        <div class="project">
-            <div>
-                <button onclick="displayGame('https://itch.io/embed-upload/4065937?color=333333')">
-                    <img src="https://img.itch.zone/aW1nLzEyNTE3MjMwLnBuZw==/315x250%23c/2qqLZt.png" alt=""/>
-                </button>
-            </div>
-            <div>
-                <a class="project-title" href="https://hirshi001.itch.io/balldodge" target="_blank"
-                   rel="noopener noreferrer">Ball Dodge</a>
-            </div>
-        </div>
 
     </div>
 </div>
