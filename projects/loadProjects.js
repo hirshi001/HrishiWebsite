@@ -1,4 +1,4 @@
-let embed_link= "<iframe frameborder=\"0\" src=\"https://itch.io/embed-upload/7586480?color=333333\" allowfullscreen=\"\" width=\"640\" height=\"500\"><a href=\"https://hirshi001.itch.io/pixelwars\">Play PixelWars on itch.io</a></iframe>"
+let embed_link = "<iframe frameborder=\"0\" src=\"https://itch.io/embed-upload/7586480?color=333333\" allowfullscreen=\"\" width=\"640\" height=\"500\"><a href=\"https://hirshi001.itch.io/pixelwars\">Play PixelWars on itch.io</a></iframe>"
 let clickToStartDiv = null
 
 function clickToStart() {
@@ -9,7 +9,7 @@ function clickToStart() {
 }
 
 function displayGame(link, name, img) {
-    if(clickToStartDiv!=null) {
+    if (clickToStartDiv != null) {
         let currentProject = document.getElementsByClassName("current-project")[0]
         currentProject.innerHTML = ""
         currentProject.appendChild(clickToStartDiv)
@@ -20,7 +20,8 @@ function displayGame(link, name, img) {
     embed_link = link
     parent.location.hash = name
 }
-function loadProjects(){
+
+function loadProjects() {
     fetch("projects/projects.json").then(r => r.json()).then(data => {
 
         let defaultProject = data["default-project"]
@@ -28,7 +29,7 @@ function loadProjects(){
         let projects = data["projects"]
         let projectList = document.getElementsByClassName("project-links")[0]
 
-        for(let i = 0; i < projects.length; i++) {
+        for (let i = 0; i < projects.length; i++) {
             let project = projects[i]
             let projectDiv = document.createElement("div")
             projectDiv.classList.add("project")
@@ -40,7 +41,7 @@ function loadProjects(){
             let name = project["name"].replace(" ", "-").toLowerCase()
             button.onclick = () => displayGame(project["game-embed"], name, project["img"])
 
-            if(parent.location.hash === "#"+name || (parent.location.hash==="" && project["name"]===defaultProject)) {
+            if (parent.location.hash === "#" + name || (parent.location.hash === "" && project["name"] === defaultProject)) {
                 displayGame(project["game-embed"], name, project["img"])
             }
 

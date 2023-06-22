@@ -1,14 +1,15 @@
-var prevScrollpos = window.pageYOffset;
+var prevScrollpos = window.scrollY;
 var scrollClick = false;
 
 addEventListener("scroll", function() {
+    console.log("Scroll: " + window.scrollY);
     if (scrollClick) {
         scrollClick = false;
         return;
     }
-    let currentScrollPos = window.pageYOffset;
+    let currentScrollPos = window.scrollY;
     let navbar = document.getElementById("navbar");
-    if (prevScrollpos > currentScrollPos || currentScrollPos < navbar.offsetHeight) {
+    if (prevScrollpos > currentScrollPos ) {
         navbar.style.top = "0";
     } else {
         navbar.style.top = "-"+navbar.offsetHeight + "px"
