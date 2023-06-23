@@ -100,7 +100,7 @@ function onLoad() {
         "                    <span class='line'></span>" +
         "                </div>" +
         "                <li class='item flex'>" +
-        "                    <a href='#' class='link flex'>" +
+        "                    <a class='link flex'>" +
         "                        <i class='bx bx-search-alt' ></i>" +
         "                        <div>" +
         "                           <input id = 'search_project' type='text' placeholder='Search Project'/>" +
@@ -245,7 +245,17 @@ function onLoad() {
                 let ul = div.appendChild(document.createElement("ul"))
                 for (let j = 0; j < names.length; j++) {
                     let li = ul.appendChild(document.createElement("li"))
-                    li.innerText = names[j]
+                    let link = li.appendChild(document.createElement("a"))
+                    link.href = "projects.html#" + names[j].toLowerCase().replace(" ", "-");
+                    link.innerText = names[j];
+                    link.addEventListener("click", function (event) {
+
+                        location.assign(link.href)
+                        console.log(location.href)
+                        if(!location.href.includes("projects.html")) {
+                            location.reload()
+                        }
+                    });
                 }
             })
     });
@@ -255,7 +265,7 @@ function onLoad() {
     });
 
     input.addEventListener("focusout", function (event) {
-        hideSearchResults();
+        // hideSearchResults();
     });
 
 

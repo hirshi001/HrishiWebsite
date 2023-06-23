@@ -87,6 +87,11 @@
     list-style: none;
 }
 
+#search_results ul li {
+    padding: 5px;
+    border-bottom: 1px solid #aaa;
+}
+
 .sidebar.close .name,
 .sidebar.close .email,
 .sidebar.close .logo_name,

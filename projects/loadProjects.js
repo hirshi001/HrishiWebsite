@@ -1,6 +1,10 @@
 let embed_link = "<iframe frameborder=\"0\" src=\"https://itch.io/embed-upload/7586480?color=333333\" allowfullscreen=\"\" width=\"640\" height=\"500\"><a href=\"https://hirshi001.itch.io/pixelwars\">Play PixelWars on itch.io</a></iframe>"
 let clickToStartDiv = null
 
+addEventListener("hashchange", () => {
+    loadProjects()
+})
+
 function clickToStart() {
     clickToStartDiv = document.getElementsByClassName("click-to-start")[0]
     let currentProject = document.getElementsByClassName("current-project")[0]
@@ -28,6 +32,7 @@ function loadProjects() {
 
         let projects = data["projects"]
         let projectList = document.getElementsByClassName("project-links")[0]
+        projectList.innerHTML = ""
 
         for (let i = 0; i < projects.length; i++) {
             let project = projects[i]
