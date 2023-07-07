@@ -11,9 +11,8 @@ body {
 }
 
 #content {
-    padding-top: 10%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 85px;
+    padding-right: 10px;
     justify-content: center;
     min-height: 100vh;
 
@@ -21,8 +20,45 @@ body {
     color: #aaa;
 }
 
+
 body div p {
     font-size: larger;
+}
+
+#welcome {
+    height: 250vh;
+    width: 100%;
+    z-index: -1;
+    overflow: clip;
+}
+
+
+#welcome svg {
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+
+    font: 40px "Comic Sans MS";
+    fill: white;
+
+    display: inline-block;
+    transition: font-size 0.5s ease-in-out;
+    animation: rotate 1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+
+}
+
+@keyframes rotate {
+    from {
+        transform: translateX(-50%) translateY(-120%) rotate(0deg) scale(1);
+    }
+    to {
+        transform: translateX(50%) translateY(-120%) rotate(0deg) scale(200);
+    }
 }
 
 /* start fader */

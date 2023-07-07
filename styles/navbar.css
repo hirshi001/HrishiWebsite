@@ -1,3 +1,7 @@
+:root {
+    scroll-behavior: smooth;
+}
+
 
 img{
     width: 4rem;
@@ -17,6 +21,7 @@ li, a, button {
     top: 0; /* Stay on top */
     width: 100%; /* Full width */
     transition: top 0.5s; /* Transition effect when sliding down (and up) */
+    z-index: 10;
     position: fixed;
 
     display: flex;

@@ -2,7 +2,6 @@ var prevScrollpos = window.scrollY;
 var scrollClick = false;
 
 addEventListener("scroll", function() {
-    console.log("Scroll: " + window.scrollY);
     if (scrollClick) {
         scrollClick = false;
         return;

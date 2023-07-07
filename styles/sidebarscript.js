@@ -65,208 +65,109 @@ const hideSearchResults = () => {
 
 
 function onLoad() {
-    document.getElementById("sidebar-div").innerHTML =
-        "<nav class='sidebar locked'>" +
-        "    <div class='logo_items flex'>" +
-        "        <span class='nav_image'>" +
-        "          <img src='/images/MinecraftSkinFace.png' alt='logo_img' />" +
-        "        </span>" +
-        "        <span class='logo_name'>Womp Womp</span>" +
-        "        <i class='bx bx-lock-alt' id='lock-icon' title='Unlock Sidebar'></i>" +
-        "    </div>" +
-        "    <div class='menu_container'>" +
-        "        <div class='menu_items'>" +
-        "            <ul class='menu_item'>" +
-        "                <div class='menu_title flex'>" +
-        "                    <span class='title'>Home</span>" +
-        "                    <span class='line'></span>" +
-        "                </div>" +
-        "                <li class='item'>" +
-        "                    <a href='index.html' class='link flex'>" +
-        "                        <i class='bx bx-home-alt'></i>" +
-        "                        <span>Home Page</span>" +
-        "                    </a>" +
-        "                </li>" +
-        "                <li class='item'>" +
-        "                    <a href='#' class='link flex'>" +
-        "                        <i class='bx bxs-contact'></i>" +
-        "                        <span>Contact Me</span>" +
-        "                    </a>" +
-        "                </li>" +
-        "            </ul>" +
-        "            <ul class='menu_item'>" +
-        "                <div class='menu_title flex'>" +
-        "                    <span class='title'>Projects</span>" +
-        "                    <span class='line'></span>" +
-        "                </div>" +
-        "                <li class='item flex'>" +
-        "                    <a class='link flex'>" +
-        "                        <i class='bx bx-search-alt' ></i>" +
-        "                        <div>" +
-        "                           <input id = 'search_project' type='text' placeholder='Search Project'/>" +
-        "                        </div>" +
-        "                    </a>" +
-        "                   <div id = 'search_results'>" +
-        "                       <ul>" +
-        "                           <li>hi</li>" +
-        "                       </ul>" +
-        "                   </div>" +
-        "                </li>" +
-        "                <li class='item'>" +
-        "                    <a href='projects.html' class='link flex'>" +
-        "                        <i class='bx bx-grid-alt'></i>" +
-        "                        <span>All Projects</span>" +
-        "                    </a>" +
-        "                </li>" +
-        "            </ul>" +
-        "            <ul class='menu_item'>" +
-        "                <div class='menu_title flex'>" +
-        "                    <span class='title'>Setting</span>" +
-        "                    <span class='line'></span>" +
-        "                </div>" +
-        "                <li class='item'>" +
-        "                    <a href=#' class='link flex'>" +
-        "                        <i class='bx bx-flag'></i>" +
-        "                        <span>Notice Board</span>" +
-        "                    </a>" +
-        "                </li>" +
-        "                <li class='item'>" +
-        "                    <a href='#' class='link flex'>" +
-        "                        <i class='bx bx-award'></i>" +
-        "                        <span>Award</span>" +
-        "                    </a>" +
-        "                </li>" +
-        "                <li class='item'>" +
-        "                    <a href='#' class='link flex'>" +
-        "                        <i class='bx bx-cog'></i>" +
-        "                        <span>Setting</span>" +
-        "                    </a>" +
-        "                </li>" +
-        "                </li>" +
-        "                <li class='item'>" +
-        "                    <a href='login.html' class='link flex'>" +
-        "                        <i class='bx bx-log-in-circle'></i>" +
-        "                        <span>Log In</span>" +
-        "                    </a>" +
-        "                </li>" +
-        "            </ul>" +
-        "        </div>" +
-        "        <div class='sidebar_profile'>" +
-        "          <span class='nav_image'>" +
-        "            <img src='/images/profile.jpg' alt='logo_img' />" +
-        "          </span>" +
-        "            <div class='data_text'>" +
-        "                <span class='name'>Hrishikesh Ingle</span>" +
-        "                <a href = 'tel: 4085297091'>" +
-        "                   <span class='email'>+1 (408) 529-7091</span>" +
-        "                </a>" +
-        "                <a href = 'mailto: hrishikeshningle@gmail.com'>" +
-        "                   <span class='email'>hrishikeshningle@gmail.com</span>" +
-        "                </a>" +
-        "            </div>" +
-        "        </div>" +
-        "    </div>" +
-        "</nav>"
+    fetch("styles/sidebar.html").then(response => response.text())
+        .then(data => {
+            document.getElementById("sidebar-div").innerHTML = data
 
 
-    sidebar = document.querySelector(".sidebar");
-    sidebarOpenBtn = document.querySelector("#sidebar-open");
-    sidebarCloseBtn = document.querySelector("#sidebar-close");
-    sidebarLockBtn = document.querySelector("#lock-icon");
+            sidebar = document.querySelector(".sidebar");
+            sidebarOpenBtn = document.querySelector("#sidebar-open");
+            sidebarCloseBtn = document.querySelector("#sidebar-close");
+            sidebarLockBtn = document.querySelector("#lock-icon");
 
-    // If the window width is less than 800px, close the sidebar and remove hoverability and lock
-    if (window.innerWidth < 800) {
-        sidebar.classList.add("close");
-        sidebar.classList.remove("locked");
-        sidebar.classList.remove("hoverable");
-    }
+            // If the window width is less than 800px, close the sidebar and remove hoverability and lock
+            // if (window.innerWidth < 800) {
+            //     sidebar.classList.add("close");
+            //     sidebar.classList.remove("locked");
+            //     sidebar.classList.remove("hoverable");
+            // }
 
-    // Adding event listeners to buttons and sidebar for the corresponding actions
-    sidebarLockBtn.addEventListener("click", toggleLock);
-    sidebar.addEventListener("mouseleave", hideSidebar);
-    sidebar.addEventListener("mouseenter", showSidebar);
-    // sidebarOpenBtn.addEventListener("click", toggleSidebar);
-    // sidebarCloseBtn.addEventListener("click", toggleSidebar);
-
-
-    // fade out animation
-    let anchors = document.getElementsByTagName("a");
-    for (let i = 0; i < anchors.length; i++) {
-        if (anchors[i].hostname !== window.location.hostname || anchors[i].pathname === window.location.pathname) {
-            continue;
-        }
-        anchors[i].addEventListener('click', function (event) {
-            var fader = document.getElementById('fader'),
-                anchor = event.currentTarget;
-
-            var listener = function () {
-                window.location = anchor.href;
-                fader.removeEventListener('animationend', listener);
-            };
-            fader.addEventListener('animationend', listener);
-
-            event.preventDefault();
-            fader.classList.add('fade-in');
-        });
-    }
-
-    window.addEventListener('pageshow', function (event) {
-        if (!event.persisted) {
-            return;
-        }
-        let fader = document.getElementById('fader');
-        fader.classList.remove('fade-in');
-    });
-
-    // lock toggle check
-    const cookieToggle = document.cookie.split("; ")
-        .find((row) => row.startsWith("sidebarLock"))?.split("=")[1]
-
-    if (cookieToggle === "True" && sidebar.classList.contains("Locked")) {
-        toggleLock()
-    } else if (cookieToggle === "False" && !sidebar.classList.contains("Locked")) {
-        toggleLock()
-    }
-    if (cookieToggle === "False") {
-        hideSidebar()
-    } else {
-        showSidebar()
-    }
+            // Adding event listeners to buttons and sidebar for the corresponding actions
+            sidebarLockBtn.addEventListener("click", toggleLock);
+            sidebar.addEventListener("mouseleave", hideSidebar);
+            sidebar.addEventListener("mouseenter", showSidebar);
+            // sidebarOpenBtn.addEventListener("click", toggleSidebar);
+            // sidebarCloseBtn.addEventListener("click", toggleSidebar);
 
 
-    // add search input listener
-    let input = document.getElementById("search_project")
-    input.addEventListener("input", function (event) {
-        fetch("https://game.hrishislife.com/cgi-bin/searchGame.cgi?search=" + event.target.value).then(response => response.json())
-            .then(data => {
-                let names = data["names"]
-                let div = document.getElementById("search_results")
-                div.innerHTML = ""
-                let ul = div.appendChild(document.createElement("ul"))
-                for (let j = 0; j < names.length; j++) {
-                    let li = ul.appendChild(document.createElement("li"))
-                    let link = li.appendChild(document.createElement("a"))
-                    link.href = "projects.html#" + names[j].toLowerCase().replace(" ", "-");
-                    link.innerText = names[j];
-                    link.addEventListener("click", function (event) {
-
-                        location.assign(link.href)
-                        console.log(location.href)
-                        if(!location.href.includes("projects.html")) {
-                            location.reload()
-                        }
-                    });
+            // fade out animation
+            let anchors = document.getElementsByTagName("a");
+            for (let i = 0; i < anchors.length; i++) {
+                if (anchors[i].hostname !== window.location.hostname || anchors[i].pathname === window.location.pathname) {
+                    continue;
                 }
-            })
-    });
+                anchors[i].addEventListener('click', function (event) {
+                    var fader = document.getElementById('fader'),
+                        anchor = event.currentTarget;
 
-    input.addEventListener("focusin", function (event) {
-        showSearchResults();
-    });
+                    var listener = function () {
+                        window.location = anchor.href;
+                        fader.removeEventListener('animationend', listener);
+                    };
+                    fader.addEventListener('animationend', listener);
 
-    input.addEventListener("focusout", function (event) {
-        // hideSearchResults();
-    });
+                    event.preventDefault();
+                    fader.classList.add('fade-in');
+                });
+            }
 
+            window.addEventListener('pageshow', function (event) {
+                if (!event.persisted) {
+                    return;
+                }
+                let fader = document.getElementById('fader');
+                fader.classList.remove('fade-in');
+            });
+
+            // lock toggle check
+            const cookieToggle = document.cookie.split("; ")
+                .find((row) => row.startsWith("sidebarLock"))?.split("=")[1]
+
+            if (cookieToggle === "True" && sidebar.classList.contains("Locked")) {
+                toggleLock()
+            } else if (cookieToggle === "False" && !sidebar.classList.contains("Locked")) {
+                toggleLock()
+            }
+
+            if (cookieToggle === "False") {
+                hideSidebar()
+            } else {
+                showSidebar()
+            }
+
+
+            // add search input listener
+            let input = document.getElementById("search_project")
+            input.addEventListener("input", function (event) {
+                fetch("https://game.hrishislife.com/cgi-bin/searchGame.cgi?search=" + event.target.value).then(response => response.json())
+                    .then(data => {
+                        let names = data["names"]
+                        let div = document.getElementById("search_results")
+                        div.innerHTML = ""
+                        let ul = div.appendChild(document.createElement("ul"))
+                        for (let j = 0; j < names.length; j++) {
+                            let li = ul.appendChild(document.createElement("li"))
+                            let link = li.appendChild(document.createElement("a"))
+                            link.href = "projects.html#" + names[j].toLowerCase().replace(" ", "-");
+                            link.innerText = names[j];
+                            link.addEventListener("click", function (event) {
+
+                                location.assign(link.href)
+                                if (!location.href.includes("projects.html")) {
+                                    location.reload()
+                                }
+                            });
+                        }
+                    })
+            });
+
+            input.addEventListener("focusin", function (event) {
+                showSearchResults();
+            });
+
+            input.addEventListener("focusout", function (event) {
+                // hideSearchResults();
+            });
+        });
 
 }
