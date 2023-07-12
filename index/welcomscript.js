@@ -9,3 +9,5 @@ window.addEventListener('scroll', () => {
     percent = logistic(percent * 20 - 10);
     document.body.style.setProperty('--scroll', percent);
 }, false);
+
+

@@ -8,12 +8,16 @@
     <link href="index.css" rel="stylesheet">
     <link href="styles/sidebarstyles.css" rel="stylesheet">
     <link href="styles/navbar.css" rel="stylesheet">
+    <link href="styles/fonts.css" rel="stylesheet">
+    <link href="styles/fader.css" rel="stylesheet">
 
-    <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 
     <script src="styles/navbarscript.js" defer></script>
     <script src="styles/sidebarscript.js" defer onload="onLoad()"></script>
     <script src="index/welcomscript.js" defer></script>
+    <script src="index/gallery.js" defer></script>
+    <script src="styles/fonts.js" defer></script>
 
 </head>
 <body>
@@ -31,8 +35,8 @@
     <nav>
         <ul class="nav_links">
             <li><a href="#welcome" onclick="onNavBarButtonClick()">Welcome</a></li>
-            <li><a href="#news" onclick="onNavBarButtonClick()">News</a></li>
-            <li><a href="#" onclick="onNavBarButtonClick()">Contact</a></li>
+            <li><a href="#hey" onclick="onNavBarButtonClick()">Hey!</a></li>
+            <li><a href="#explore" onclick="onNavBarButtonClick()">Explore</a></li>
             <li><a href="#" onclick="onNavBarButtonClick()">About</a></li>
         </ul>
     </nav>
@@ -45,53 +49,81 @@
 <div id="sidebar-div"></div>
 
 
-
 <div id="content">
     <div id="welcome">
-        <svg>
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Welcome</text>
+        <svg width="100%">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" id="welcome-text">Welcome to Hrishi's
+                Life
+            </text>
         </svg>
     </div>
-    <div id="news">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias corporis culpa eveniet excepturi facere, ipsa, labore maxime modi nemo nesciunt non, placeat ullam? Ab aliquid aperiam ducimus itaque maiores.</p>
+    <div id="hey">
+        <div class="section-title">
+            <div></div>
+            <h1>HEY THERE!!</h1>
+        </div>
+        <div id="hey-content">
+            <div id="hey-img">
+                <img src="images/Me.JPG" alt="Whats good"/>
+            </div>
+            <div id="hey-text">
+                <p>
+                    Welcome to my fun little <span style="color: cornflowerblue" class="jump">playground,</span>
+                    <strong style="color: deepskyblue">Hrishi's Life!</strong> My name is
+                    <span style="color: orange;" class="hover-font">Hrishikesh Ingle</span> and I am an undergraduate
+                    student
+                    at <span style="color: red; --data-url: url(/images/WisconsinLogo.png) 16 15" class="hover-cursor">UW-Madison</span>
+                    studying Computer
+                    Science. Join me as I explore the different wonders of <span style="color: hotpink"
+                                                                                 class="glow hover-font">life</span>
+                    while you experience about my <span style="color: saddlebrown" class="sink">journey</span> and the
+                    things I have learned along the way.
+                    On this website, you will find my <span style="color: darkgreen" class="jump">projects,</span> <span
+                        style="color: darkgoldenrod" class="jump">games,</span>
+                    <span style="color: darkred" class="jump">my hobbies,</span> and <span style="color: darkslateblue"
+                                                                                           class="jump">more!</span>
+                    To navigate this site, you can use the <span style="color: darkorange"
+                                                                 class="hover-font">sidebar</span> on the left or the
+                    <span style="color: darkorchid" class="hover-font">navbar</span> on the top.
+                    In the future, more features will be added to this website, such as accounts and chatbots, so stay
+                    tuned!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="explore">
+        <div class="section-title">
+            <h1>Explore</h1>
+        </div>
+        <div class="gallery">
+            <div class="gallery-slides a0">
+                <div class="gallery-slide">
+                    <a href="projects.html#pixel-wars">
+                        <img src="https://img.itch.zone/aW1nLzEyNTA0MDcyLnBuZw==/180x143%23c/vo4U2U.png" alt="Game 1">
+                    </a>
+                </div>
+                <div class="gallery-slide">
+                    <a href="projects.html#chess">
+                        <img src="https://img.itch.zone/aW1nLzEyNTEzOTAzLnBuZw==/315x250%23c/%2Fy5KXR.png" alt="Game 2">
+                    </a>
+                </div>
+                <div class="gallery-slide">
+                    <a href="projects.html#universal-empire">
+                        <img src="https://img.itch.zone/aW1nLzEyNTE3MTczLnBuZw==/315x250%23c/SZuPrM.png" alt="Game 3">
+                    </a>
+                </div>
+                <div class="gallery-slide">
+                    <a href="projects.html#ball-dodge">
+                        <img src="https://img.itch.zone/aW1nLzEyNTE3MjMwLnBuZw==/315x250%23c/2qqLZt.png" alt="Game 4">
+                    </a>
+                </div>
+            </div>
+            <button class="button-left arrow" onclick="galleryChange(-1)"><</button>
+            <button class="button-right arrow" onclick="galleryChange(1)">></button>
+        </div>
+        <iframe src="https://discord.com/widget?id=688211723240341544&theme=dark" width="350" height="500"
+                allowtransparency="true" frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
 </div>
 </body>

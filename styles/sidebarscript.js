@@ -1,3 +1,5 @@
+// NOTICE: This script will insert the sidebar html into the page, so do not use this script if you don't want sidebar
+
 // Selecting the sidebar and buttons
 let sidebar = document.querySelector(".sidebar");
 let sidebarOpenBtn = document.querySelector("#sidebar-open");
@@ -8,20 +10,35 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/
 
 // Function to toggle the lock state of the sidebar
 const toggleLock = () => {
+    let content = document.getElementById("content")
     sidebar.classList.toggle("locked");
     // If the sidebar is not locked
     if (!sidebar.classList.contains("locked")) {
-        sidebar.classList.add("hoverable");
-        sidebarLockBtn.classList.replace("bx-lock-alt", "bx-lock-open-alt");
-        sidebarLockBtn.title = "Lock Sidebar";
-        document.cookie = "sidebarLock=False"
+        unlockSidebar()
     } else {
-        sidebar.classList.remove("hoverable");
-        sidebarLockBtn.classList.replace("bx-lock-open-alt", "bx-lock-alt");
-        document.getElementById("lock-icon").title = "Unlock Sidebar";
-        document.cookie = "sidebarLock=True"
+        lockSidebar()
     }
 };
+
+const lockSidebar = () => {
+    let content = document.getElementById("content")
+    sidebar.classList.add("locked");
+    sidebar.classList.remove("hoverable");
+    sidebarLockBtn.classList.replace("bx-lock-open-alt", "bx-lock-alt");
+    sidebarLockBtn.title = "Unlock Sidebar";
+    document.cookie = "sidebarLock=True"
+    content.style.paddingLeft = 275 + "px";
+}
+
+const unlockSidebar = () => {
+    let content = document.getElementById("content")
+    sidebar.classList.remove("locked");
+    sidebar.classList.add("hoverable");
+    sidebarLockBtn.classList.replace("bx-lock-alt", "bx-lock-open-alt");
+    sidebarLockBtn.title = "Lock Sidebar";
+    document.cookie = "sidebarLock=False"
+    content.style.paddingLeft = 85 + "px";
+}
 
 // Function to hide the sidebar when the mouse leaves
 const hideSidebar = () => {
@@ -123,10 +140,11 @@ function onLoad() {
             const cookieToggle = document.cookie.split("; ")
                 .find((row) => row.startsWith("sidebarLock"))?.split("=")[1]
 
-            if (cookieToggle === "True" && sidebar.classList.contains("Locked")) {
-                toggleLock()
-            } else if (cookieToggle === "False" && !sidebar.classList.contains("Locked")) {
-                toggleLock()
+            let content = document.getElementById("content")
+            if (cookieToggle === "True") {
+                lockSidebar()
+            } else if (cookieToggle === "False") {
+                unlockSidebar()
             }
 
             if (cookieToggle === "False") {
@@ -169,5 +187,27 @@ function onLoad() {
                 // hideSearchResults();
             });
         });
-
 }
+
+
+// lock toggle check
+const cookieToggle = document.cookie.split("; ")
+    .find((row) => row.startsWith("sidebarLock"))?.split("=")[1]
+
+
+
+let content = document.getElementById("content")
+let transition = window.getComputedStyle(content).transition
+content.style.transition = "none"
+
+if (cookieToggle === "True") {
+    content.style.paddingLeft = 85 + "px";
+} else if (cookieToggle === "False") {
+    content.style.paddingLeft = 85 + "px";
+}
+
+
+// sleep for 100ms to allow transition to finish
+setTimeout(() => {
+    content.style.transition = transition
+}, 100);

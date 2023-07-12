@@ -1,3 +1,5 @@
+// NOTICE: Do not use this script if the page does not have a navbar
+
 var prevScrollpos = window.scrollY;
 var scrollClick = false;
 
@@ -30,5 +32,7 @@ addEventListener("mousemove", function(e) {
 
 function onNavBarButtonClick(){
     scrollClick = true;
-
 }
+
+let navbar = document.getElementById("navbar");
+document.getElementById("content").style.paddingTop = navbar.offsetHeight + "px";
