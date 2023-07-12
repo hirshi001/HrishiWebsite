@@ -135,6 +135,30 @@ body {
     padding: 100pt 20pt 20pt;
 }
 
+.projects-display {
+    display: inline-flex;
+    position: relative;
+    margin-top: 50pt;
+    margin-bottom: 50pt;
+}
+
+.projects-display-title {
+    margin-left: 10pt;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    font-size: 32pt;
+    font-weight: 500;
+    color: #fff;
+}
+
+.projects-display-title span {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 
 .gallery {
     width: 75%;
@@ -151,7 +175,7 @@ body {
 
 .arrow {
     position: absolute;
-    background: none;
+    background-color: #0003;
     border: none;
     transform: translateY(-50%) scale(3);
     padding: 10pt;
