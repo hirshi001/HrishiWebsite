@@ -157,7 +157,7 @@ function onLoad() {
             // add search input listener
             let input = document.getElementById("search_project")
             input.addEventListener("input", function (event) {
-                fetch("https://game.hrishislife.com/cgi-bin/searchGame.cgi?search=" + event.target.value).then(response => response.json())
+                fetch("https://game.hrishislife.com/cgi-bin/searchGame.cgi?search=" + event.target.value.toLowerCase()).then(response => response.json())
                     .then(data => {
                         let names = data["names"]
                         let div = document.getElementById("search_results")
@@ -201,7 +201,7 @@ let transition = window.getComputedStyle(content).transition
 content.style.transition = "none"
 
 if (cookieToggle === "True") {
-    content.style.paddingLeft = 85 + "px";
+    content.style.paddingLeft = 275 + "px";
 } else if (cookieToggle === "False") {
     content.style.paddingLeft = 85 + "px";
 }
