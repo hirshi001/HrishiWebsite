@@ -157,26 +157,7 @@ function onLoad() {
             // add search input listener
             let input = document.getElementById("search_project")
             input.addEventListener("input", function (event) {
-                fetch("https://game.hrishislife.com/cgi-bin/searchGame.cgi?search=" + event.target.value.toLowerCase()).then(response => response.json())
-                    .then(data => {
-                        let names = data["names"]
-                        let div = document.getElementById("search_results")
-                        div.innerHTML = ""
-                        let ul = div.appendChild(document.createElement("ul"))
-                        for (let j = 0; j < names.length; j++) {
-                            let li = ul.appendChild(document.createElement("li"))
-                            let link = li.appendChild(document.createElement("a"))
-                            link.href = "projects.html#" + names[j].toLowerCase().replace(" ", "-");
-                            link.innerText = names[j];
-                            link.addEventListener("click", function (event) {
-
-                                location.assign(link.href)
-                                if (!location.href.includes("projects.html")) {
-                                    location.reload()
-                                }
-                            });
-                        }
-                    })
+                search(event.target.value)
             });
 
             input.addEventListener("focusin", function (event) {
@@ -187,6 +168,29 @@ function onLoad() {
                 // hideSearchResults();
             });
         });
+}
+
+function search(target) {
+    fetch("https://game.hrishislife.com:2000/cgi-bin/searchGame.cgi?search=" + target.toLowerCase()).then(response => response.json())
+        .then(data => {
+            let names = data["names"]
+            let div = document.getElementById("search_results")
+            div.innerHTML = ""
+            let ul = div.appendChild(document.createElement("ul"))
+            for (let j = 0; j < names.length; j++) {
+                let li = ul.appendChild(document.createElement("li"))
+                let link = li.appendChild(document.createElement("a"))
+                link.href = "projects.html#" + names[j].toLowerCase().replace(" ", "-");
+                link.innerText = names[j];
+                link.addEventListener("click", function (event) {
+
+                    location.assign(link.href)
+                    if (!location.href.includes("projects.html")) {
+                        location.reload()
+                    }
+                });
+            }
+        })
 }
 
 
