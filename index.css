@@ -23,21 +23,9 @@ body {
     text-underline-offset: 10px;
 }
 
-
-#content {
-    padding-left: 85px;
-    padding-right: 10px;
-    justify-content: center;
-    min-height: 100vh;
-    transition: all 0.5s ease-in-out;
-
-    background-color: #112;
-    color: #aaa;
-}
-
 /* welcome */
 #welcome {
-    height: 200vh;
+    height: 400vh;
     width: 100%;
     z-index: -1;
     overflow: clip;
@@ -65,7 +53,7 @@ body {
         opacity: 1;
     }
     to {
-        transform: rotate(90deg) scale(200);
+        transform: rotate(90deg) scale(100);
         opacity: 0;
     }
 }

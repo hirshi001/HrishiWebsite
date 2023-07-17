@@ -27,6 +27,19 @@
     object-fit: cover;
 }
 
+/* content */
+#content {
+    padding-left: 85px;
+    padding-right: 10px;
+    justify-content: center;
+    min-height: 100vh;
+    transition: all 0.5s ease-in-out;
+
+    background-color: #112;
+    color: #aaa;
+}
+
+
 /* Sidebar */
 .sidebar {
     position: fixed;
