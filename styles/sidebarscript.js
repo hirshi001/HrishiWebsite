@@ -10,10 +10,8 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/
 
 // Function to toggle the lock state of the sidebar
 const toggleLock = () => {
-    let content = document.getElementById("content")
-    sidebar.classList.toggle("locked");
     // If the sidebar is not locked
-    if (!sidebar.classList.contains("locked")) {
+    if (sidebar.classList.contains("locked")) {
         unlockSidebar()
     } else {
         lockSidebar()
