@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16"/>
 
     <title>Hrishi's Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
-    <link href="styles/sidebarstyles.css" rel="stylesheet">
-    <link href="styles/navbar.css" rel="stylesheet">
+    <link href="sidebar/sidebarstyles.css" rel="stylesheet">
+    <link href="navbar/navbar.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
     <link href="styles/fader.css" rel="stylesheet">
 
     <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 
-    <script src="styles/navbarscript.js" defer></script>
-    <script src="styles/sidebarscript.js" defer onload="onLoad()"></script>
+    <script src="navbar/navbarscript.js" defer></script>
+    <script src="sidebar/sidebarscript.js" defer onload="onLoad()"></script>
     <script src="index/welcomscript.js" defer></script>
     <script src="index/gallery.js" defer></script>
     <script src="styles/fonts.js" defer></script>
@@ -101,43 +101,55 @@
             <h1>Explore</h1>
         </div>
         <div class="projects-display">
+            <div class="explore-display-title">
+                <a>Projects</a>
+            </div>
             <div class="gallery">
                 <div class="gallery-slides a0">
                     <div class="gallery-slide">
                         <a href="projects.html#pixel-wars">
                             <img src="https://img.itch.zone/aW1nLzEyNTA0MDcyLnBuZw==/180x143%23c/vo4U2U.png"
                                  alt="Game 1">
+                            <p><strong>Pixel Wars</strong></p>
                         </a>
                     </div>
                     <div class="gallery-slide">
                         <a href="projects.html#chess">
                             <img src="https://img.itch.zone/aW1nLzEyNTEzOTAzLnBuZw==/315x250%23c/%2Fy5KXR.png"
                                  alt="Game 2">
+                            <p><strong>Chess</strong></p>
                         </a>
                     </div>
                     <div class="gallery-slide">
                         <a href="projects.html#universal-empire">
                             <img src="https://img.itch.zone/aW1nLzEyNTE3MTczLnBuZw==/315x250%23c/SZuPrM.png"
                                  alt="Game 3">
+                            <p><strong>Universal Empire</strong></p>
                         </a>
                     </div>
                     <div class="gallery-slide">
                         <a href="projects.html#ball-dodge">
                             <img src="https://img.itch.zone/aW1nLzEyNTE3MjMwLnBuZw==/315x250%23c/2qqLZt.png"
                                  alt="Game 4">
+                            <p><strong>Ball Dodge</strong></p>
                         </a>
                     </div>
                 </div>
                 <button class="button-left arrow" onclick="galleryChange(-1)"><</button>
                 <button class="button-right arrow" onclick="galleryChange(1)">></button>
             </div>
-            <div class="projects-display-title">
-                <span>Projects</span>
+        </div>
+        <div class="discord-display">
+            <div class="discord-display-iframe">
+                <iframe src="https://discord.com/widget?id=688211723240341544&theme=dark" width="100%" height="500"
+                        allowtransparency="true" frameborder="0"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+
+            <div class="explore-display-title">
+                <a href="https://discord.com/invite/WkqrvGdK?utm_source=Discord%20Widget&utm_medium=Connect" target="_blank">Discord</a>
             </div>
         </div>
-        <iframe src="https://discord.com/widget?id=688211723240341544&theme=dark" width="350" height="500"
-                allowtransparency="true" frameborder="0"
-                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
 </div>
 </body>

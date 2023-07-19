@@ -36,3 +36,7 @@ function onNavBarButtonClick(){
 
 let navbar = document.getElementById("navbar");
 document.getElementById("content").style.paddingTop = navbar.offsetHeight + "px";
+
+fetch("https://discord.com/api/guilds/688211723240341544/widget.json").then(response => response.json()).then(data => {
+    console.log(data);
+});

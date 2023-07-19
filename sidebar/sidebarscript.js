@@ -80,7 +80,7 @@ const hideSearchResults = () => {
 
 
 function onLoad() {
-    fetch("styles/sidebar.html").then(response => response.text())
+    fetch("sidebar/sidebar.html").then(response => response.text())
         .then(data => {
             document.getElementById("sidebar-div").innerHTML = data
 
